@@ -1,18 +1,16 @@
 import { RecommendProps } from "./recommendType"
 
 interface DefaultResponse {
-  status: number // 이건 그냥 200임
+  status: number
   retCd: string
-  success: boolean //이걸로 구분함
+  success: boolean
   message: string
 }
 
 export interface Company {
-  mngrNm: string
   custNm: string
+  custCd: string
   isMainYn: 'Y' | 'N'
-  useInttId: string
-  freeDDay: number
 }
 
 export interface UserInfo {
@@ -23,6 +21,8 @@ export interface UserInfo {
   useInttId: string
   accessCompanyList: Company[]
   certCnt: number
+  prodCd: string
+  companyNm: string
 }
 
 interface LoginFormValues {
@@ -32,7 +32,7 @@ interface LoginFormValues {
 
 interface LoginResponse extends DefaultResponse {
   body: UserInfo & {
-    freeDDay: number
+    freeDDay: number 
     planStts: string
   }
 }

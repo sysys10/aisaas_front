@@ -5,8 +5,11 @@ const postLogin = async (data: LoginFormValues): Promise<LoginResponse> => {
   const response = await daquvApi.post('/login', {
     userId: data.userId,
     password: data.password,
-    useInttId: '',
-    useTokenYn: ''
+    loginMode: '1',
+    prodCd: '',
+    linkCntrctId: '',
+    linkUserId: '',
+    userTkn:''
   })
   return response.data
 }
