@@ -35,9 +35,9 @@ Thumbs.db
 
 *storybook.log
 
-start.sh
-stop.sh
-build.sh
-run.sh
+# start.sh
+# stop.sh
+# build.sh
+# run.sh
 
 **/stats.html
