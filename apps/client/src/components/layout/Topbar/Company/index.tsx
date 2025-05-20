@@ -13,8 +13,8 @@ export default function Company() {
     useCompanyHook()
 
   const currentCompany = useMemo(
-    () => companies.find((company) => company.useInttId === user?.useInttId),
-    [companies, user?.useInttId]
+    () => companies.find((company) => company.isMainYn === 'Y'),
+    [companies]
   )
   if (!user?.useInttId) {
     return (
@@ -38,10 +38,7 @@ export default function Company() {
           <span className='text-sm border-r border-gray-200 pr-2'>
             {currentCompany?.custNm || '사업자 선택'}
           </span>
-          <span className='flex items-center pl-2 gap-3 text-xs font-semibold text-aicfo'>
-            {renderFreeDDay(currentCompany?.freeDDay ?? 0)}
-            <CustomIcons name='expandMore' className='w-4 h-4' />
-          </span>
+        
         </div>
       }
       align='center'
@@ -51,7 +48,7 @@ export default function Company() {
         <ul className='space-y-4'>
           {companies?.map((company) => (
             <li
-              key={company.useInttId}
+              key={company.custCd}
               onClick={() => handleChangeInttID({ c: company })}
               className='space-y-1 p-2 cursor-pointer hover:bg-[#F9F9F9]'
             >
@@ -77,11 +74,11 @@ export default function Company() {
               </div>
               <div className='flex text-xs items-center'>
                 <span className='text-[#4f4f4f] relative z-10 border-r border-gray-200 pr-2'>
-                  담당자 : {company.mngrNm ?? '없음'}
+                  {company.custCd}
                 </span>
-                <span className='text-aicfo pl-2'>
+                {/* <span className='text-aicfo pl-2'>
                   {renderFreeDDay(company.freeDDay)}
-                </span>
+                </span> */}
               </div>
             </li>
           ))}

@@ -23,6 +23,8 @@ const useLogin = () => {
               userId: data.body.userId,
               companyId: data.body.companyId,
               mngeYn: data.body.mngeYn,
+              prodCd: data.body.prodCd,
+              companyNm: data.body.companyNm,
               useInttId: data.body.useInttId,
               certCnt: data.body.certCnt
             })
