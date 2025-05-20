@@ -1,0 +1,28 @@
+{
+  "name": "@packages/apis",
+  "version": "0.1.0",
+  "main": "src/index.ts",
+  "types": "types/index.ts",
+  "exports": {
+    ".": {
+      "import": "./src/index.ts",
+      "require": "./src/index.ts",
+      "types": "./types/index.ts"
+    },
+    "./types": {
+      "types": "./types/index.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc"
+  },
+  "dependencies": {
+    "@tanstack/react-query": "^5.62.11",
+    "axios": "^1.6.0"
+  },
+  "devDependencies": {
+    "@packages/eslint-config": "workspace:*",
+    "@packages/ts-config": "workspace:*",
+    "typescript": "^5.3.3"
+  }
+}

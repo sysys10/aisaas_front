@@ -1,0 +1,34 @@
+{
+  "name": "aicfosass_front",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+  "node": ">=16.0.0",
+  "npm": ">=8.0.0"
+   },
+  "scripts": {
+    "dev": "pnpm -r dev --host 0.0.0.0",
+    "start": "pnpm -r start --host 0.0.0.0",
+    "client:dev": "pnpm -r -F client dev",
+    "mobile:dev": "pnpm -r -F mobile dev",
+    "client:add": "pnpm -F client add",
+    "mobile:add": "pnpm -F client add",
+    "client:start": "pnpm -r -F client start",
+    "build": "pnpm -r build",
+    "lint": "pnpm -r lint",
+    "test": "pnpm -r test",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "pnpm": {
+    "overrides": {
+      "tailwindcss": "^3.3.0"
+    }
+  }
+}
