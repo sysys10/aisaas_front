@@ -23,6 +23,8 @@ function useCompanyMutation({
           companyId: data.body.companyId,
           mngeYn: data.body.mngeYn,
           useInttId: data.body.useInttId,
+          prodCd: data.body.prodCd,
+          companyNm: data.body.companyNm,
           certCnt: data.body.certCnt
         })
         setCompanies(data.body.accessCompanyList)
@@ -58,15 +60,10 @@ export const useCompanyHook = () => {
     changeInttId
   })
   function handleChangeInttID({ c }: { c: Company }) {
-    changeInttId({
-      useInttId: c.useInttId,
-      useTokenYn: 'Y'
-    })
+    
   }
   function handleChangeMainCompany({ c }: { c: Company }) {
-    changeMainIntt({
-      useInttId: c.useInttId
-    })
+    
   }
   return { companies, handleChangeInttID, user, handleChangeMainCompany }
 }
