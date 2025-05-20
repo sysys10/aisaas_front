@@ -5,9 +5,6 @@ import svgr from 'vite-plugin-svgr'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
-  // base 옵션 추가
-  base: '/',  // 루트 경로에 배포하는 경우
-  
   envDir: '../../',
   plugins: [
     svgr(),
