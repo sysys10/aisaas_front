@@ -1,7 +1,7 @@
 import { useAdminStore } from '@stores/adminStore'
 import { useSidebarStore } from '@stores/sidebarStore'
 
-import { useAdminQuery, useAdminTokenQuery } from './query'
+import { useAdminQuery } from './query'
 import useRefreshMutation from './query/useRefreshMutation'
 
 export function useAdmin(handleResetResults: () => void) {
@@ -31,8 +31,4 @@ export function useAdmin(handleResetResults: () => void) {
     handleResetResults()
   }
   return { adminUrl, handleToggleAdmin, handleCloseAdmin, isAdminLoading }
-}
-export const useAdminToken = () => {
-  const { mutate: getAdminToken } = useAdminTokenQuery()
-  return {getAdminToken }
 }
