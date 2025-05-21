@@ -55,15 +55,17 @@ function useMainCompanyMutation({
 export const useCompanyHook = () => {
   const { user, setUser } = useUserStore((s) => s)
   const { companies, setCompanies } = useCompanyStore((s) => s)
-  const { mutate: changeInttId } = useCompanyMutation({ setUser, setCompanies })
-  const { mutate: changeMainIntt } = useMainCompanyMutation({
-    changeInttId
-  })
+  
   function handleChangeInttID({ c }: { c: Company }) {
     
   }
   function handleChangeMainCompany({ c }: { c: Company }) {
-    
+    const newUser = {
+      ...user,
+      companyNm: c.custNm,
+      companyId: c.custCd,
+    }
+    setUser(newUser as UserStoreType)
   }
   return { companies, handleChangeInttID, user, handleChangeMainCompany }
 }

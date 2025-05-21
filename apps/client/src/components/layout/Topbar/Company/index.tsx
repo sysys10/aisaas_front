@@ -9,7 +9,7 @@ import { Popover } from '@packages/components'
 import { useCompanyHook } from './hooks/useCompanyHook'
 
 export default function Company() {
-  const { companies, handleChangeMainCompany, user, handleChangeInttID } =
+  const { companies, handleChangeMainCompany, user } =
     useCompanyHook()
 
   const currentCompany = useMemo(
@@ -25,12 +25,6 @@ export default function Company() {
       </div>
     )
   }
-  const renderFreeDDay = (freeDay: number) => {
-    if (freeDay > 0) {
-      return '무료체험 D-' + freeDay
-    }
-    return null
-  }
   return (
     <Popover
       trigger={
@@ -45,31 +39,21 @@ export default function Company() {
       className='rounded-lg shadow-lg mt-1'
     >
       <div className='min-w-64 whitespace-nowrap'>
-        <ul className='space-y-4'>
+        <ul className='space-y-4 overflow-y-auto max-h-[800px]'>
           {companies?.map((company) => (
             <li
               key={company.custCd}
-              onClick={() => handleChangeInttID({ c: company })}
+              onClick={() => handleChangeMainCompany({ c: company })}
               className='space-y-1 p-2 cursor-pointer hover:bg-[#F9F9F9]'
             >
               <div
                 className={`flex items-center text-base space-x-2 ${currentCompany?.custNm === company.custNm ? 'text-blue-600' : ''}`}
               >
                 <span>{company.custNm}</span>
-                {company.isMainYn === 'Y' ? (
+                {company.isMainYn === 'Y' && (
                   <span className='text-blue-600 bg-[#EDEFFB] rounded-[0.25rem] p-1 text-xs'>
                     기본
                   </span>
-                ) : (
-                  <button
-                    onClick={(e) => {
-                      e.stopPropagation()
-                      handleChangeMainCompany({ c: company })
-                    }}
-                    className='text-[#767676] underline text-xs'
-                  >
-                    기본 설정
-                  </button>
                 )}
               </div>
               <div className='flex text-xs items-center'>

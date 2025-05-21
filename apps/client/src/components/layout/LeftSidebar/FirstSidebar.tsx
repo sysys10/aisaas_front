@@ -55,24 +55,7 @@ export function FirstSidebar({
               }}
             />
           ))}
-          <CustomIcons
-            className='text-left cursor-pointer text-xs'
-            badge={fdsAlarmCnt > 0}
-            text={SIDE_BAR_TOP_LIST[2].text}
-            iconClassName={`w-10 h-10 p-2 rounded-full ${
-              sidebarContent === SIDE_BAR_TOP_LIST[2].name && isSidebarOpen
-                ? 'bg-aicfo'
-                : ''
-            }`}
-            name={
-              sidebarContent === SIDE_BAR_TOP_LIST[2].name && isSidebarOpen
-                ? ((SIDE_BAR_TOP_LIST[2].name + '_white') as IconName)
-                : (SIDE_BAR_TOP_LIST[2].name as IconName)
-            }
-            onClick={() => {
-              toggleSidebar(SIDE_BAR_TOP_LIST[2].name)
-            }}
-          />
+         
         </div>
         <div className='flex relative z-10 flex-col mt-4 pt-1 border-t flex-1 border-[#D9D9D9]'>
           {SIDE_BAR_BOTTOM_LIST.map((v, i) => (
