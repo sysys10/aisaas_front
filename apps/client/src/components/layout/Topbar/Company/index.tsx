@@ -41,8 +41,7 @@ export default function Company() {
               key={company.custCd}
               onClick={() => {
                 handleChangeMainCompany({ c: company });
-                // 팝오버 닫기 위해 body 클릭 이벤트 발생시키기
-                document.body.click();
+                window.location.reload();
               }}
               className='space-y-1 p-2 cursor-pointer hover:bg-[#F9F9F9]'
             >
