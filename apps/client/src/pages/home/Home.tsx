@@ -26,7 +26,7 @@ export default function HomePage() {
 
   useEffect(() => {
     if (!user || !user.userId) {
-      window.location.href = '/login'
+      window.location.href = '/pc/login'
     }
   }, [user])
 

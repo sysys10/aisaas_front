@@ -14,7 +14,7 @@ export const useUnreadPush = ({
     },
     onError: (error) => {
       if (error.status === 401) {
-        window.location.href = '/logout/redirect'
+        window.location.href = '/pc/logout/redirect'
       }
     }
   })

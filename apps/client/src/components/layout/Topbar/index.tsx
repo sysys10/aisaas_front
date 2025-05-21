@@ -19,7 +19,7 @@ export default function Topbar({ ...props }: NavbarProps) {
               <div className='mb-2 hidden md:flex mt-2 absolute top-0 py-3 left-28'>
                 <img
                   onClick={() => {
-                    window.location.href = '/'
+                    window.location.href = '/pc'
                   }}
                   src={Logo}
                   alt='logo'

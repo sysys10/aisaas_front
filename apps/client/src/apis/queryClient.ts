@@ -12,7 +12,7 @@ export const queryClient = new QueryClient({
     mutations: {
       onSuccess: (data: any) => {
         if (data.status === 999 || data.status === 401) {
-          window.location.href = '/logout/redirect'
+          window.location.href = '/pc/logout/redirect'
         }
       },
       retry: 0

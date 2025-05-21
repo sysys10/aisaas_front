@@ -13,7 +13,7 @@ export default function LogoutRedirectPage() {
     handleLogout()
 
     const timer = setTimeout(() => {
-      window.location.href = '/login'
+      window.location.href = '/pc/login'
     }, 2000)
 
     return () => clearTimeout(timer)

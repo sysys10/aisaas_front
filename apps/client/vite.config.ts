@@ -5,6 +5,7 @@ import svgr from 'vite-plugin-svgr'
 import tsconfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
+  base: '/pc',
   envDir: '../../',
   plugins: [
     svgr(),

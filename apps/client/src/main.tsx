@@ -9,7 +9,7 @@ import { queryClient } from './apis/queryClient.ts'
 
 createRoot(document.getElementById('root')!).render(
   <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
+    <BrowserRouter basename='/pc'>
       <App />
     </BrowserRouter>
   </QueryClientProvider>

@@ -5,7 +5,7 @@ import { AICFOMutation } from '@types'
 
 export const handleGlobalError = (error: AxiosError) => {
   if (error.status === 401) {
-    window.location.href = '/logout/redirect'
+    window.location.href = '/pc/logout/redirect'
     return
   }
 }
