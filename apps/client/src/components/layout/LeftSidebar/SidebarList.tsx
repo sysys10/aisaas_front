@@ -20,7 +20,7 @@ export function SidebarList({
     if (user?.userId) {
       handleGetRecentQuestion()
     }
-  }, [user])
+  }, [])
 
   const handleAllRecentQuestionRemove = async () => {
     handleRemoveRecentQuestion({
