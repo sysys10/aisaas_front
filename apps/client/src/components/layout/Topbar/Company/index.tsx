@@ -1,7 +1,3 @@
-import { useMemo } from 'react'
-
-import CustomIcons from '@components/common/CustomIcons'
-
 import type { Company } from '@types'
 
 import { Popover } from '@packages/components'
@@ -43,7 +39,11 @@ export default function Company() {
           {companies?.map((company) => (
             <li
               key={company.custCd}
-              onClick={() => handleChangeMainCompany({ c: company })}
+              onClick={() => {
+                handleChangeMainCompany({ c: company });
+                // 팝오버 닫기 위해 body 클릭 이벤트 발생시키기
+                document.body.click();
+              }}
               className='space-y-1 p-2 cursor-pointer hover:bg-[#F9F9F9]'
             >
               <div
