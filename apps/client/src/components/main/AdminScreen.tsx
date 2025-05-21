@@ -20,7 +20,6 @@ export default function AdminScreen({
     'https://admin.webcashaicfo.com'
   ];
 
-  // aicfo 어드민 세션 종료된 경우, 메세지 수신하여 로그아웃 처리
   useEffect(() => {
     window.addEventListener('message', async (event) => {
       if (!acceptedOriginUrls.includes(event.origin)) {
@@ -69,7 +68,7 @@ export default function AdminScreen({
           <p className='text-sm sm:text-base md:text-lg text-gray-500'>사용설정을 불러오는 중입니다.</p>
         </div>
       ) : (
-        <iframe src={adminUrl} className='w-full flex-1 border-0' />
+        <iframe src={'https://aibranch-dev.aiwebcash.co.kr/adm/usst_main_01.act'} className='w-full flex-1 border-0' />
       )}
     </div>
   )

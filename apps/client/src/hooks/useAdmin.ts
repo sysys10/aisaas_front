@@ -21,7 +21,7 @@ export function useAdmin(handleResetResults: () => void) {
       setSidebarContent('brf')
       handleResetResults()
     } else {
-      openAdmin()
+     setAdminUrl('https://aibranch-dev.aiwebcash.co.kr/adm/usst_main_01.act')
     }
   }
   const handleCloseAdmin = () => {
