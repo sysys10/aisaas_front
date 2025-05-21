@@ -23,9 +23,9 @@ const useGetAlarm = ({ setAlarms }: useAlarmProps) => {
 const useAlarmQuery = () => {
   const [alarms, setAlarms] = useState<AlarmType[]>([])
   const { mutate: getAlarm } = useGetAlarm({ setAlarms })
-  useEffect(() => {
-    getAlarm()
-  }, [])
+  // useEffect(() => {
+  //   getAlarm()
+  // }, [])
   return {
     alarms
   }

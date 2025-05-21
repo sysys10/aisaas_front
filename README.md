@@ -81,7 +81,6 @@ useAlarm: 알림 관련 로직을 관리합니다.<br/>
 userStore: 사용자 정보를 관리합니다.<br/>
 companyStore: 회사 정보를 관리합니다.<br/>
 sidebarStore: 사이드바 상태를 관리합니다.<br/>
-adminStore: 관리자 기능 상태를 관리합니다.<br/>
 recentQuestionStore, <br/>
 
 <br/>

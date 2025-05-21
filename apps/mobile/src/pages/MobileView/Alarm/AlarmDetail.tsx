@@ -10,10 +10,10 @@ import { useGetVocDetail } from '@hooks/useGetVocDetail'
 export default function AlarmDetail() {
   const navigate = useNavigate()
   const { type, seq } = useParams()
-  const { getVoc, vocDetail } = useGetVocDetail()
-  useEffect(() => {
-    getVoc({ vocId: Number(seq) })
-  }, [])
+  const { vocDetail } = useGetVocDetail()
+  // useEffect(() => {
+  //   getVoc({ vocId: Number(seq) })
+  // }, [])
   return (
     <>
       <div className='h-topbar-height w-full fixed top-0 left-0 z-50 bg-white flex items-center px-6'>

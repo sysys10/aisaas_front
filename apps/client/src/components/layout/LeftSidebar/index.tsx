@@ -16,9 +16,9 @@ export default function Sidebar({ ...props }: LeftSidebarProps) {
     props
 
   const { fdsAlarmCnt, getFdsAlarmCnt } = useFdsAlarmCnt()
-  useEffect(() => {
-    getFdsAlarmCnt()
-  }, [])
+  // useEffect(() => {
+  //   getFdsAlarmCnt()
+  // }, [])
   const handleLogout = useUserStore((s) => s.handleLogout)
   const { sidebarContent, isSidebarOpen, toggleSidebar, setIsSidebarOpen } =
     useSidebar({

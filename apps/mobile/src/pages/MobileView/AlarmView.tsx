@@ -167,9 +167,9 @@ export function Alarms() {
   const handleAllAlarmRead = () => {
     handleSetAlarmRead()
   }
-  useEffect(() => {
-    handleGetAlarm()
-  }, [])
+  // useEffect(() => {
+  //   handleGetAlarm()
+  // }, [])
   const navigate = useNavigate()
 
   const handleAlarmItemClick = (alarm: AlarmType) => {

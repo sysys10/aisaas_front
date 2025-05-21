@@ -15,11 +15,11 @@ export function FdsLists({ getFdsAlarmCnt }: { getFdsAlarmCnt: () => void }) {
     handleDeleteAlarm
   } = useFdsLists(getFdsAlarmCnt)
 
-  useEffect(() => {
-    handleGetFdsLists({
-      page: 1
-    })
-  }, [])
+  // useEffect(() => {
+  //   handleGetFdsLists({
+  //     page: 1
+  //   })
+  // }, [])
 
   return (
     <>
