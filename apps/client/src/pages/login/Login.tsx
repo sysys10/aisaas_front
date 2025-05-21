@@ -100,7 +100,7 @@ export default function LoginPage() {
   }
 
   const isProduction = import.meta.env.VITE_DAQUV_ENV === 'production'
-  const currentUrl = isProduction ? 'https://admin.webcashaicfo.com' : 'https://aicfoadm-dev.appplay.co.kr';
+  const currentUrl = isProduction ? 'https://aibranch-dev.aiwebcash.co.kr/adm' : ' https://aibranch-dev.aiwebcash.co.kr/adm';
 
   return (
     <div className='bg-background flex min-h-screen text-base items-center justify-center px-4'>
@@ -161,25 +161,26 @@ export default function LoginPage() {
           </div>
 
           <div className='flex justify-between mt-3 text-sm text-gray-500'>
-            <a
+            {/* <a
               target='_blank'
               className='px-2 text-primary'
               href={`${currentUrl}/acfo_adm_subscrpn_display.act`}
             >
               회원가입
-            </a>
+            </a> */}
+            <div/>
             <div className='flex divide-x-[0.5px] divide-gray-400'>
               <a
                 target='_blank'
                 className='px-2'
-                href={`${currentUrl}/acfo_adm_0001_02.act`}
+                href={`${currentUrl}/mmbr_0005_01.act`}
               >
                 아이디 찾기
               </a>
               <a
                 target='_blank'
                 className='px-2'
-                href={`${currentUrl}/acfo_adm_0001_04.act`}
+                href={`${currentUrl}/mmbr_0005_03.act`}
               >
                 비밀번호 찾기
               </a>

@@ -34,7 +34,7 @@ const FreeBuyScreen = () => {
 
   return (
     <div className='w-full h-full pt-20'>
-      {/* <iframe className='w-full h-full scale-125' src={`${adminToken}`} /> */}
+      <iframe className='w-full h-full scale-125' src={`https://aibranch-dev.aiwebcash.co.kr/adm/usst_main_01.act`} />
     </div>
   )
 }

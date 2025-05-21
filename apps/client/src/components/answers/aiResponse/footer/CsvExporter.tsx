@@ -5,15 +5,15 @@ interface TableDataHeader {
   type: string
 }
 
-interface TableData {
-  key: {
-    desc?: string
-    title?: string
-    subtitle?: string
-  }
-  data: Record<string, any>[]
-  data_header: Record<string, TableDataHeader>
-}
+// interface TableData {
+//   key: {
+//     desc?: string
+//     title?: string
+//     subtitle?: string
+//   }
+//   data: Record<string, any>[]
+//   data_header: Record<string, TableDataHeader>
+// }
 
 export class CsvExporter {
   private utterance?: string;
