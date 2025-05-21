@@ -1,7 +1,6 @@
 import { useAdminStore } from '@stores/adminStore'
 import { useSidebarStore } from '@stores/sidebarStore'
 
-import { useAdminQuery } from './query'
 import useRefreshMutation from './query/useRefreshMutation'
 
 export function useAdmin(handleResetResults: () => void) {
@@ -11,7 +10,6 @@ export function useAdmin(handleResetResults: () => void) {
   const { setIsSidebarOpen, setSidebarContent } = useSidebarStore((s) => s)
   const setAdminUrl = useAdminStore((s) => s.setAdminUrl)
 
-  const { mutate: openAdmin, isPending: isAdminLoading } = useAdminQuery()
 
   const handleToggleAdmin = () => {
     if (adminUrl) {
@@ -30,5 +28,5 @@ export function useAdmin(handleResetResults: () => void) {
     setIsSidebarOpen(false)
     handleResetResults()
   }
-  return { adminUrl, handleToggleAdmin, handleCloseAdmin, isAdminLoading }
+  return { adminUrl, handleToggleAdmin, handleCloseAdmin }
 }

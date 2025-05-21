@@ -5,11 +5,9 @@ import { useUserStore } from '@stores/userStore'
 import { useLogoutMutation } from '@hooks/query'
 
 export default function AdminScreen({
-  isAdminLoading,
   adminUrl,
   handleCloseAdmin
 }: {
-  isAdminLoading: boolean
   adminUrl: string
   handleCloseAdmin: () => void
 }) {
@@ -51,7 +49,7 @@ export default function AdminScreen({
           </div>
         </div>
       </div>
-      {isAdminLoading ? (
+      {/* { (
         <div className='w-full flex-1 flex flex-col items-center justify-center gap-4 sm:gap-5 md:gap-6'>
           <div className='flex items-center justify-center gap-2 sm:gap-3 md:gap-4'>
             {Array.from({ length: 3 }).map((_, index) => (
@@ -67,9 +65,9 @@ export default function AdminScreen({
           </div>
           <p className='text-sm sm:text-base md:text-lg text-gray-500'>사용설정을 불러오는 중입니다.</p>
         </div>
-      ) : (
-        <iframe src={'https://aibranch-dev.aiwebcash.co.kr/adm/usst_main_01.act'} className='w-full flex-1 border-0' />
-      )}
+      ) : ( */}
+        <iframe src={adminUrl} className='w-full flex-1 border-0' />
+      {/* )} */}
     </div>
   )
 }

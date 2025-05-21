@@ -30,7 +30,7 @@ export default function HomePage() {
     }
   }, [user])
 
-  const { handleToggleAdmin, adminUrl, handleCloseAdmin, isAdminLoading } =
+  const { handleToggleAdmin, adminUrl, handleCloseAdmin } =
     useAdmin(handleResetResults)
 
   return (
@@ -53,8 +53,8 @@ export default function HomePage() {
           }}
         />
         <main className='w-full h-full pt-[var(--topbar-height)]'>
-          {adminUrl || isAdminLoading ? (
-            <AdminScreen {...{ isAdminLoading, adminUrl, handleCloseAdmin }} />
+          {adminUrl  ? (
+            <AdminScreen {...{ adminUrl, handleCloseAdmin }} />
           ) : isBlocked ? (
             <FreeBuyScreen />
           ) : (
