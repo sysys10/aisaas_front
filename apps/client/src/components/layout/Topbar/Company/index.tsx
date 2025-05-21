@@ -7,15 +7,15 @@ import type { Company } from '@types'
 import { Popover } from '@packages/components'
 
 import { useCompanyHook } from './hooks/useCompanyHook'
+import { useUserStore } from '@stores'
 
 export default function Company() {
-  const { companies, handleChangeMainCompany, user } =
+  const { companies, handleChangeMainCompany } =
     useCompanyHook()
+  const user = useUserStore((s) => s.user)
 
-  const currentCompany = useMemo(
-    () => companies.find((company) => company.isMainYn === 'Y'),
-    [companies]
-  )
+  const currentCompany = user?.companyNm
+  
   if (!user?.useInttId) {
     return (
       <div className='flex items-center gap-1 min-w-20 cursor-pointer p-2 px-4 rounded-[6.25rem] border border-[#EAEAEA] text-gray-700 hover:text-gray-900'>
@@ -30,7 +30,7 @@ export default function Company() {
       trigger={
         <div className='flex items-center gap-1 min-w-32 cursor-pointer p-2 px-4 rounded-[6.25rem] border border-[#EAEAEA] text-gray-700 hover:text-gray-900'>
           <span className='text-sm border-r border-gray-200 pr-2'>
-            {currentCompany?.custNm || '사업자 선택'}
+            {currentCompany || '사업자 선택'}
           </span>
         
         </div>
@@ -47,7 +47,7 @@ export default function Company() {
               className='space-y-1 p-2 cursor-pointer hover:bg-[#F9F9F9]'
             >
               <div
-                className={`flex items-center text-base space-x-2 ${currentCompany?.custNm === company.custNm ? 'text-blue-600' : ''}`}
+                className={`flex items-center text-base space-x-2 ${currentCompany === company.custNm ? 'text-blue-600' : ''}`}
               >
                 <span>{company.custNm}</span>
                 {company.isMainYn === 'Y' && (
