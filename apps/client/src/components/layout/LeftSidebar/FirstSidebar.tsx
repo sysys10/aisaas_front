@@ -37,7 +37,7 @@ export function FirstSidebar({
           <img src={Cube} alt='cube' className='w-full' />
         </div>
         <div className='flex flex-col gap-y-4 px-4'>
-          {SIDE_BAR_TOP_LIST.slice(0, -1).map((v, i) => (
+          {SIDE_BAR_TOP_LIST.map((v, i) => (
             <CustomIcons
               className='text-left cursor-pointer text-xs'
               key={i + 20}
