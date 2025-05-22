@@ -38,7 +38,7 @@ export function ChartTable({
           )}
         </div>
       </div>
-      <Table is_api={is_api} data={data.data} columns={columns as any} />
+      {/* <Table is_api={is_api} data={data.data} columns={columns as any} /> */}
     </div>
   )
 }
