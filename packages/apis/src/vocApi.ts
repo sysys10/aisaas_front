@@ -1,6 +1,6 @@
 import { SaveVocApiProps } from '../types'
 import { AdminDaquvResponse } from '../types'
-import { formDataApi } from './axiosInstance'
+import { daquvApi, formDataApi } from './axiosInstance'
 
 // 타입 임포트
 
@@ -10,14 +10,8 @@ export const saveVocApi = async ({
   VocData: SaveVocApiProps
 }): Promise<AdminDaquvResponse> => {
   const { channel, content, utterance, type, sessionId, chainId } = VocData
-  const formData = new FormData()
-  formData.append('chainId', chainId)
-  formData.append('channel', channel)
-  formData.append('content', content)
-  formData.append('conversationId', sessionId)
-  formData.append('utterance', utterance)
-  formData.append('type', type)
-  const { data } = await formDataApi.post('/voc/save', formData)
+
+  const { data } = await daquvApi.post('/voc/save', {type,chainId, channel, content, conversationId: sessionId, utterance})
   return data
 }
 
