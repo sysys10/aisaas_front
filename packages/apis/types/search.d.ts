@@ -16,6 +16,7 @@ interface SearchResult {
 type SearchRequest = {
   utterance: string
   session_id?: string
+  cust_cd?: string
 }
 type PendingAnswer = string | null
 

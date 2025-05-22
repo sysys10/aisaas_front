@@ -3,6 +3,7 @@ import { AICFOResultType, SearchAnswerResponse, SearchRequest } from '@types'
 import { searchAnswerApi } from '@packages/apis'
 
 import { createMutation } from './mutationUtils'
+import { useCompanyStore, useUserStore } from '@stores/userStore'
 
 interface UseSearchQueryProps {
   results: AICFOResultType[]
@@ -17,6 +18,7 @@ export function useSearchQuery({
   setRecommend,
   handleGetRecentQuestion
 }: UseSearchQueryProps) {
+  const user = useUserStore((state) => state.user)
   return createMutation<any, SearchRequest>({
     mutationFn: ({ utterance, session_id }) => {
       let isSearching = false
@@ -40,7 +42,8 @@ export function useSearchQuery({
           date_info: []
         }
       ])
-      return searchAnswerApi({ utterance, session_id })
+
+      return searchAnswerApi({ utterance, session_id, cust_cd: user?.companyId })
     },
     onSuccess: (data, request) => {
       console.log('======data======', data)
