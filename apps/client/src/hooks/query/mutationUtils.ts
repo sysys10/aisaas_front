@@ -3,8 +3,8 @@ import { AxiosError } from 'axios'
 
 import { AICFOMutation } from '@types'
 
-export const handleGlobalError = (error: AxiosError) => {
-  if (error.status === 401) {
+export const handleGlobalError = (error: any) => {
+  if (error.response?.data.retCd === "LGN001") {
     window.location.href = '/pc/logout/redirect'
     return
   }
