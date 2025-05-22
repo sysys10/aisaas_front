@@ -17,7 +17,7 @@ export function useSearchQuery({
   setRecommend,
   handleGetRecentQuestion
 }: UseSearchQueryProps) {
-  return createMutation<SearchAnswerResponse, SearchRequest>({
+  return createMutation<any, SearchRequest>({
     mutationFn: ({ utterance, session_id }) => {
       let isSearching = false
       isSearching = results.some((result) => result.answer === null)
@@ -53,17 +53,17 @@ export function useSearchQuery({
         newResults[lastIndex] = {
           utterance: request.utterance,
           answer: data.success
-            ? data.body.answer
+            ? data.body.body.answer
             : `에러가 발생했습니다.${data.message}`,
-          table_data: data.success ? data.body.raw_data : [],
-          sql_query: data.success ? data.body.sql_query : '',
+          table_data: data.success ? data.body.body.raw_data : [],
+          sql_query: data.success ? data.body.body.sql_query : '',
           session_id: data.success
-            ? data.body.session_id
+            ? data.body.body.session_id
             : (request.session_id ?? ''),
-          chain_id: data.success ? data.body.chain_id : '',
-          is_api: data.success ? data.body.is_api : false,
-          is_muryo: data.success ? data.body.is_muryo : false,
-          date_info: data.success ? data.body.date_info : []
+          chain_id: data.success ? data.body.body.chain_id : '',
+          is_api: data.success ? data.body.body.is_api : false,
+          is_muryo: data.success ? data.body.body.is_muryo : false,
+          date_info: data.success ? data.body.body.date_info : []
         }
         console.log('======newResults======', newResults)
         return newResults
