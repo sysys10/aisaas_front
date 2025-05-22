@@ -2,7 +2,6 @@ import { recommendQuestionApi } from '@apis'
 import { useMutation, useQueryClient } from '@tanstack/react-query'
 
 import { RecommendProps } from '@types'
-import { RecommendQuestionResponse } from '@types'
 
 export function useRecommendMutation({
   setRecommendQuestions
@@ -11,13 +10,23 @@ export function useRecommendMutation({
 }) {
   const queryClient = useQueryClient()
 
-  return useMutation<RecommendQuestionResponse, void>({
+  return useMutation<any, void>({
     mutationFn: recommendQuestionApi,
     mutationKey: ['recommendQuestions'],
     onSuccess: (data) => {
       if (data.success) {
-        setRecommendQuestions(data.body.body)
-        queryClient.setQueryData(['recommendQuestions'], data)
+        const recData = data.body.rec.map((item: any) => ({
+          ...item,
+          recommendquest: item.recommendquest ? item.recommendquest.split('|') : []
+        }));
+        setRecommendQuestions(recData);
+        queryClient.setQueryData(['recommendQuestions'], {
+          ...data,
+          body: {
+            ...data.body,
+            rec: recData
+          }
+        });
       }
     }
   })
