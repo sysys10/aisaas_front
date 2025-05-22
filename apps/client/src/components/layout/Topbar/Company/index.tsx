@@ -28,7 +28,6 @@ export default function Company() {
           <span className='text-sm border-r border-gray-200 pr-2'>
             {currentCompany || '사업자 선택'}
           </span>
-        
         </div>
       }
       align='center'
