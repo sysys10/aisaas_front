@@ -43,7 +43,7 @@ export function useSearchQuery({
         }
       ])
 
-      return searchAnswerApi({ utterance, session_id, cust_cd: user?.companyId })
+      return searchAnswerApi({ utterance, session_id, custCd: user?.companyId })
     },
     onSuccess: (data, request) => {
       console.log('======data======', data)

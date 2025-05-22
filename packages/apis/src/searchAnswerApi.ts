@@ -4,12 +4,12 @@ import { daquvApi } from './axiosInstance'
 export const searchAnswerApi = async ({
   utterance,
   session_id,
-  cust_cd
+  custCd
 }: SearchRequest): Promise<SearchAnswerResponse> => {
   const { data } = await daquvApi.post('/llm/utterance', {
     utterance,
     session_id,
-    cust_cd
+    custCd
   })
   return data
 }

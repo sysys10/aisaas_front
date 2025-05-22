@@ -27,7 +27,9 @@ function AIResponse({
           <article
             className={`flex w-full flex-col gap-y-2 bg-background-primary`}
           >
-            <Charts table_data={table_data} is_api={is_api} />
+            {table_data?.length > 0 && (
+              <Charts table_data={table_data} is_api={is_api} />
+            )}
           </article>
 
           <AIResponseFooter
