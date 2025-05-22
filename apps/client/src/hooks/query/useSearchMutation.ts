@@ -43,6 +43,7 @@ export function useSearchQuery({
       return searchAnswerApi({ utterance, session_id })
     },
     onSuccess: (data, request) => {
+      console.log('======data======', data)
       setResults((prev) => {
         const newResults = [...prev]
         const lastIndex = newResults.length - 1
@@ -64,6 +65,7 @@ export function useSearchQuery({
           is_muryo: data.success ? data.body.is_muryo : false,
           date_info: data.success ? data.body.date_info : []
         }
+        console.log('======newResults======', newResults)
         return newResults
       })
 
