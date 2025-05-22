@@ -73,7 +73,7 @@ export function FirstSidebar({
                   sidebarContent === v.name ? 'bg-aicfo' : 'bg-[#EAEAEA]'
                 }`}
               />
-              {user?.certCnt == 0 && sidebarContent !== 'setting' && (
+              {/* {user?.certCnt == 0 && sidebarContent !== 'setting' && (
                 <div className='absolute top-1/2 -translate-y-1/2 left-12 min-w-80 text-wrap z-50 rounded-md bg-gray-800 opacity-90 p-3 text-sm text-white'>
                   <div className='absolute top-1/2 -translate-y-1/2 -left-2'>
                     <div className='border-t-8 border-r-8 border-b-8 border-t-transparent border-r-gray-800 border-b-transparent'></div>
@@ -83,7 +83,7 @@ export function FirstSidebar({
                     등록 후 사용이 가능합니다.
                   </p>
                 </div>
-              )}
+              )} */}
             </div>
           ))}
         </div>
