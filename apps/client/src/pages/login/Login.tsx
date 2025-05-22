@@ -1,4 +1,4 @@
-import Logo from '@assets/AICFO_LOGO.png'
+import Logo from '@assets/AIBranch_t.png'
 import Cube from '@assets/icons/AICFO_CUBE_LOGO.png'
 import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'

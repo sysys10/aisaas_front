@@ -1,4 +1,4 @@
-import Logo from '@/assets/AICFO_LOGO.png'
+import Logo from '@/assets/AIBranch_t.png'
 import { useMemo } from 'react'
 
 import { NavbarProps } from '@types'
