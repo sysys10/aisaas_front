@@ -9,7 +9,7 @@ export function ChartTable({
   is_api
 }: {
   data: TableData
-  is_api: boolean
+  is_api?: boolean
 }) {
   const columns = useMemo(() => {
     if (!data.data_header || !data.data?.[0]) return []
@@ -31,9 +31,9 @@ export function ChartTable({
         <div className='text-primary'>
           {data.key && (
             <>
-              {data.key.title || ''}{' '}
-              <span className='text-tertiary'>{data.key.subtitle || ''}</span>
-              <span className=''>{data.key.desc || ''}</span>
+              {data.key?.title || ''}{' '}
+              <span className='text-tertiary'>{data.key?.subtitle || ''}</span>
+              <span className=''>{data.key?.desc || ''}</span>
             </>
           )}
         </div>
