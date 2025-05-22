@@ -70,7 +70,7 @@ export function useSearchQuery({
       })
 
       if (data.success && typeof handleGetRecentQuestion === 'function') {
-        setRecommend(data.body.recommend ?? [])
+        setRecommend(data.body.body.recommend ?? [])
         handleGetRecentQuestion()
       }
     },
