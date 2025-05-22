@@ -1,9 +1,7 @@
-import { recentQuestionStore, useUserStore } from '@stores'
+import { recentQuestionStore } from '@stores'
 
 import {
   BodyStringResponse,
-  RecentQuestionProps,
-  RecentQuestionsRequest,
   RequestRemoveUtterance,
   postRecentQuestionsResponse
 } from '@types'
@@ -18,7 +16,7 @@ function useRecentQuestionMutation() {
     mutationFn: postRecentQuestions,
     onSuccess: (data, _, __) => {
       if (data.success) {
-        setRecentQuestions(data.body)
+        setRecentQuestions(data.body.rec)
       }
     }
   })
@@ -33,7 +31,7 @@ function useRemoveRecentQuestionMutation() {
       if (data.success) {
         const response = await postRecentQuestions()
         if (response.success) {
-          setRecentQuestions(response.body)
+          setRecentQuestions(response.body.rec)
         }
       }
     }
