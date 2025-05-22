@@ -12,7 +12,7 @@ import { createMutation } from './mutationUtils'
 
 function useRecentQuestionMutation() {
   const setRecentQuestions = recentQuestionStore((s) => s.setRecentQuestions)
-  return createMutation<postRecentQuestionsResponse, void>({
+  return createMutation<any, void>({
     mutationFn: postRecentQuestions,
     onSuccess: (data, _, __) => {
       if (data.success) {
