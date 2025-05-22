@@ -56,24 +56,24 @@ export function useSearchQuery({
         newResults[lastIndex] = {
           utterance: request.utterance,
           answer: data.success
-            ? data.body.body.answer
+            ? data.body.answer
             : `에러가 발생했습니다.${data.message}`,
-          table_data: data.success ? data.body.body.raw_data : [],
-          sql_query: data.success ? data.body.body.sql_query : '',
+          table_data: data.success ? data.body.raw_data : [],
+          sql_query: data.success ? data.body.sql_query : '',
           session_id: data.success
-            ? data.body.body.session_id
+            ? data.body.session_id
             : (request.session_id ?? ''),
-          chain_id: data.success ? data.body.body.chain_id : '',
-          is_api: data.success ? data.body.body.is_api : false,
-          is_muryo: data.success ? data.body.body.is_muryo : false,
-          date_info: data.success ? data.body.body.date_info : []
+          chain_id: data.success ? data.body.chain_id : '',
+          is_api: data.success ? data.body.is_api : false,
+          is_muryo: data.success ? data.body.is_muryo : false,
+          date_info: data.success ? data.body.date_info : []
         }
         console.log('======newResults======', newResults)
         return newResults
       })
 
       if (data.success && typeof handleGetRecentQuestion === 'function') {
-        setRecommend(data.body.body.recommend ?? [])
+        setRecommend(data.body.recommend ?? [])
         handleGetRecentQuestion()
       }
     },
