@@ -3,9 +3,9 @@ import { useEffect, useMemo } from 'react'
 
 import { SidebarListProps } from '@types'
 
-import { FdsLists } from './Fds/FdsLists'
+// import { FdsLists } from './Fds/FdsLists'
 import { RecentQuestionList } from './RecentQuestion'
-import ReportList from './Report/ReportList'
+// import ReportList from './Report/ReportList'
 
 export function SidebarList({
   sidebarContent,
@@ -37,13 +37,6 @@ export function SidebarList({
               handleAllRecentQuestionRemove={handleAllRecentQuestionRemove}
               handleSearchSubmit={handleSearchSubmit}
               handleRemoveRecentQuestion={handleRemoveRecentQuestion}
-            />
-          ) : sidebarContent === 'brf' ? (
-            <ReportList />
-          ) : sidebarContent === 'fds' ? (
-            <FdsLists
-              getFdsAlarmCnt={getFdsAlarmCnt}
-              sidebarContent={sidebarContent}
             />
           ) : null}
         </div>

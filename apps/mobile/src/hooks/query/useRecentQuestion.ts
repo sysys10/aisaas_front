@@ -20,33 +20,29 @@ interface RecentQuestionHookResult {
   removeRecentQuestion: (request: RequestRemoveUtterance) => void
 }
 
-function useRecentQuestionMutation({
-  setRecentQuestions
-}: RecentQuestionMutationProps) {
-  return useMutation<
-    postRecentQuestionsResponse,
-    Error,
-    RecentQuestionsRequest
-  >({
+function useRecentQuestionMutation(
+  { setRecentQuestions }: RecentQuestionMutationProps
+) {
+  return useMutation<any, Error, RecentQuestionsRequest>({
     mutationFn: postRecentQuestions,
     onSuccess: (data, _, __) => {
       if (data.success) {
-        setRecentQuestions(data.body)
+        setRecentQuestions(data.body.rec)
       }
     }
   })
 }
 
-function useRemoveRecentQuestionMutation({
-  setRecentQuestions
-}: RecentQuestionMutationProps) {
+function useRemoveRecentQuestionMutation(
+  { setRecentQuestions }: RecentQuestionMutationProps
+) {
   return useMutation<BodyStringResponse, Error, RequestRemoveUtterance>({
     mutationFn: postRemoveRecentQuestion,
     onSuccess: async (data, _, __) => {
       if (data.success) {
         const response = await postRecentQuestions()
         if (response.success) {
-          setRecentQuestions(response.body)
+          setRecentQuestions(response.body.rec)
         }
       }
     }

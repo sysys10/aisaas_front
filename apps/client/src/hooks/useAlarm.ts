@@ -18,7 +18,7 @@ export function useAlarm(getAlarmCnt: () => void) {
 
   const handleSetAlarmRead = (pushNotificationHistorySeq?: number) => {
     setAlarmRead(pushNotificationHistorySeq)
-    getAlarmCnt()
+    // getAlarmCnt()
   }
 
   return {

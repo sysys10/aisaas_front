@@ -13,7 +13,9 @@ export const queryClient = new QueryClient({
       onSuccess: (data: any) => {
         // 400 unauthorized
         if (data.status === 999 || data.status === 400) {
-          window.location.href = '/pc/logout/redirect'
+          if (data.retCd === "LGN001") {
+            window.location.href = '/pc/logout/redirect'
+          }
         }
       },
       retry: 0

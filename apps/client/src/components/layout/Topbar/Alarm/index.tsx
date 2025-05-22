@@ -12,9 +12,9 @@ export default function Alarm() {
   const { alarms, handleGetAlarm, handleSetAlarmRead, isLoading } =
     useAlarm(getAlarmCnt)
 
-  useEffect(() => {
-    getAlarmCnt()
-  }, [])
+  // useEffect(() => {
+  //   getAlarmCnt()
+  // }, [])
   const isBlocked = useUserStore((s) => s.isBlocked)
 
   const handleAlarmClick = () => {

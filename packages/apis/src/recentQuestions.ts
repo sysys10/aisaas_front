@@ -1,11 +1,11 @@
 import {
   BodyStringResponse,
   RequestRemoveUtterance,
-  postRecentQuestionsResponse
+  // postRecentQuestionsResponse
 } from '../types'
 import { daquvApi } from './axiosInstance'
 
-const postRecentQuestions = async (): Promise<postRecentQuestionsResponse> => {
+const postRecentQuestions = async (): Promise<any> => {
   const { data } = await daquvApi.post('/sel/recommendQuest')
   return data
 }
