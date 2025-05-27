@@ -28,7 +28,7 @@ export function ChatBox({ searchIsLoading, result, isLast }: ChatBoxProps) {
                 >
                   <img src={logo} alt='logo' className='w-full h-full' />
                 </div>
-                <div className='flex text-base items-center min-h-10 pl-2'>
+                <div className='flex text-base items-center pl-2'>
                   {result.answer ? (
                     <AnimatedText
                       text={result.answer}

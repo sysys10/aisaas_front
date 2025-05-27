@@ -1,5 +1,5 @@
 import { flexRender } from '@tanstack/react-table'
-import { memo } from 'react'
+// import { memo } from 'react'
 
 import { TableBodyProps } from './types'
 

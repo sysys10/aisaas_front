@@ -10,8 +10,7 @@ interface ChartsProps {
 }
 
 export function Charts({ table_data, is_api }: ChartsProps) {
-  console.log('table_data', table_data)
-
+  
   return useMemo(
     () => (
       <>
