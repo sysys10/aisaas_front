@@ -94,7 +94,7 @@ export function MainBanner({ searchBarRef, ...props }: MainBannerProps) {
                 (v, idx) => (
                   <div
                     style={{ animation: `slideUp ${0.2 * idx}s` }}
-                    className={`py-3 border-b border-border px-6 text-base text-prinart cursor-pointer hover:bg-gray-50 transition-colors duration-200`}
+                    className={`py-3 border-b border-border px-6 text-base text-primary cursor-pointer hover:bg-gray-50 transition-colors duration-200`}
                     onClick={() => handleQuestionClick(v)}
                     key={v}
                   >
