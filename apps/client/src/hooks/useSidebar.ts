@@ -17,6 +17,9 @@ const useSidebar = ({
     useSidebarStore((s) => s)
 
   const toggleSidebar = (name: SidebarContent) => {
+   if ( sidebarContent === 'setting' && name === 'recentQuestion') {
+        setIsSidebarOpen(false)
+    } 
     if (name === 'setting') {
       if (sidebarContent === 'setting') {
         setSidebarContent('recentQuestion')
