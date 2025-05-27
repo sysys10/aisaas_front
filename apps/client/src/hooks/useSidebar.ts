@@ -17,15 +17,20 @@ const useSidebar = ({
     useSidebarStore((s) => s)
 
   const toggleSidebar = (name: SidebarContent) => {
-   if ( sidebarContent === 'setting' && name === 'recentQuestion') {
-        setIsSidebarOpen(false)
+   if (sidebarContent === 'setting' && name === 'recentQuestion') {
+    // 최근질의 누르고
+    console.log('hello  ')
+        return 
     } 
     if (name === 'setting') {
+      // 세팅을 눌렀는데
       if (sidebarContent === 'setting') {
+        // 세팅으 또 누르면
         setSidebarContent('recentQuestion')
         setIsSidebarOpen(false)
         handleCloseAdmin()
       } else {
+        // 세팅을 누르고 최근질의 누를 떄
         handleToggleAdmin()
         setSidebarContent(name)
         setIsSidebarOpen(false)
