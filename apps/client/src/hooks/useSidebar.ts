@@ -19,6 +19,10 @@ const useSidebar = ({
   const toggleSidebar = (name: SidebarContent) => {
    if (sidebarContent === 'setting' && name === 'recentQuestion') {
     // 최근질의 누르고
+        
+    handleCloseAdmin()
+    setSidebarContent('recentQuestion')
+
         return 
     } 
     if (name === 'setting') {
