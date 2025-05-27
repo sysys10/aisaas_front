@@ -1,4 +1,3 @@
-// components/answers/aiResponse/footer/SqlDebugInfo.tsx
 import { Link } from 'react-router-dom'
 import { Accordion } from '@packages/components'
 
@@ -36,17 +35,6 @@ export const SqlDebugInfo = ({ sqlQuery, sessionId, chainId }: SqlDebugInfoProps
         />
       ) : (
         <p>SQL Query가 없습니다.</p>
-      )}
-      {sessionId && (
-        <div className='flex items-end gap-x-2'>
-          <Link
-            to={`https://aicfoprm-dev.appplay.co.kr/main/llmadmin/daquv03/conversation/${sessionId}/${chainId && `chain/${chainId}`}`}
-            target='_blank'
-            className='text-sm text-gray-500'
-          >
-            {`https://aicfoprm-dev.appplay.co.kr/main/llmadmin/daquv03/conversation/${sessionId}/${chainId && `chain/${chainId}`}`}
-          </Link>
-        </div>
       )}
     </div>
   );

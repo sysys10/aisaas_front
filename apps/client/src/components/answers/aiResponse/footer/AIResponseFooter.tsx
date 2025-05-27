@@ -1,4 +1,3 @@
-// components/answers/aiResponse/footer/AIResponseFooter.tsx
 import { useState } from 'react'
 import { VocModal } from '@components/layout/Topbar/Voc/VocModal'
 import { ActionButtons } from './ActionButtons'
@@ -69,12 +68,12 @@ function AIResponseFooter({
         utterance={utterance}
       />
       <div className='flex flex-col justify-between'>
+        {has_next && (
+          <button className='bg-blue-500 text-white px-3 py-1 rounded-md' onClick={()=>handleSearchSubmit({utterance: 'next_page', session_id: sessionId})}>계속하기</button>
+        )}
         <div className='flex justify-between px-1'>
           <InfoPopover dateInfo={dateInfo} />
           <ActionButtons
-            sessionId={sessionId ?? ''}
-            has_next={has_next}
-            handleSearchSubmit={handleSearchSubmit}
             handleDownloadCSV={handleDownloadCSV}
             handleLikeClick={handleLikeClick}
             handleDislikeClick={handleDislikeClick}
