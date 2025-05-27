@@ -32,7 +32,6 @@ export default function AnimatedText({
       {displayedText.split('\n').map((line, i) => (
         <span key={i}>
           {line}
-          <br />
         </span>
       ))}
     </div>
