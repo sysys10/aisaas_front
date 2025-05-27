@@ -33,8 +33,8 @@ export default function Company() {
       align='center'
       className='rounded-lg shadow-lg mt-1'
     >
-      <div className='min-w-64 whitespace-nowrap'>
-        <ul className='space-y-4 overflow-y-auto max-h-[800px]'>
+      <div className='min-w-64 whitespace-nowrap max-h-[20rem] overflow-y-auto'>
+        <ul className='space-y-4'>
           {companies?.map((company) => (
             <li
               key={company.custCd}
