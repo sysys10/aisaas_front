@@ -25,7 +25,7 @@ export default function Company() {
   return (
     <Popover
       trigger={
-        <div className='flex items-center gap-1 min-w-32 cursor-pointer p-2 px-4 rounded-[6.25rem] border border-[#EAEAEA] text-gray-700 hover:text-gray-900'>
+        <div className='flex items-center justify-between gap-1 min-w-32 cursor-pointer p-2 px-4 rounded-[6.25rem] border border-[#EAEAEA] text-gray-700 hover:text-gray-900'>
           <span className='text-sm border-r border-gray-200 pr-2'>
             {currentCompany || '사업자 선택'}
           </span>

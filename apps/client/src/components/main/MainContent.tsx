@@ -34,7 +34,7 @@ function MainContent({ ...props }: MainContentProps) {
       />
       {isFirstSearch && (
         <p className='text-sm text-gray-400 absolute left-1/2 -translate-x-1/2 bottom-10'>
-          AICFO는 답변을 생성하는 과정에서 실수할 수 있습니다.
+          AIBRANCH는 답변을 생성하는 과정에서 실수할 수 있습니다.
         </p>
       )}
     </div>
