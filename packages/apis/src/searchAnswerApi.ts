@@ -7,7 +7,7 @@ export const searchAnswerApi = async ({
   custCd
 }: SearchRequest): Promise<SearchAnswerResponse> => {
   const { data } = await daquvApi.post('/llm/utterance', {
-    utterance,
+    utterance: utterance == '계속하기' ? 'next_page' : utterance,
     session_id,
     custCd
   })
