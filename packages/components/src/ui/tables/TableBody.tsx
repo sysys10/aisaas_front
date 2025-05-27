@@ -23,7 +23,6 @@ export const TableBody =
                   position: cellIndex === 0 ? 'sticky' : 'static',
                   left: cellIndex === 0 ? 0 : 'auto',
                   zIndex: cellIndex === 0 ? 1 : 'auto',
-                  borderLeft: cellIndex === 0 ? '#edf2f7' : 'inherit',
                   width: cell.column.getSize(),
                   minWidth: headers[cellIndex].column.columnDef.meta?.width || '150px',
                   maxWidth: '400px',
