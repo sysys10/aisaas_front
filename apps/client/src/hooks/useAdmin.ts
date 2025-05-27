@@ -24,7 +24,7 @@ export function useAdmin(handleResetResults: () => void) {
   }
   const handleCloseAdmin = () => {
     setAdminUrl('')
-    // refresh()
+    refresh()
     setIsSidebarOpen(false)
     handleResetResults()
   }
