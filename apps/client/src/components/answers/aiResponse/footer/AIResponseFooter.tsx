@@ -67,7 +67,7 @@ function AIResponseFooter({
         sessionId={sessionId}
         utterance={utterance}
       />
-      <div className='flex flex-col justify-between'>
+      <div className='flex flex-col justify-between items-end'>
         {has_next && (
           <button className='bg-blue-500 text-white px-3 py-1 rounded-md' onClick={()=>handleSearchSubmit({utterance: 'next_page', session_id: sessionId})}>계속하기</button>
         )}
