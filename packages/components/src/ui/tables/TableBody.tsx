@@ -13,7 +13,7 @@ export const TableBody =
               hasNextPage && rowIndex === rows.length - 1 ? lastRowRef : null
             }
             key={row.id}
-            className='relative divide-x divide-gray-200 text-primary hover:bg-gray-50'
+            className='relative first:border-r-2 first:border-gray-200 divide-x divide-gray-200 text-primary hover:bg-gray-50'
           >
             {row.getVisibleCells().map((cell: any, cellIndex: number) => (
               <td
@@ -23,7 +23,7 @@ export const TableBody =
                   position: cellIndex === 0 ? 'sticky' : 'static',
                   left: cellIndex === 0 ? 0 : 'auto',
                   zIndex: cellIndex === 0 ? 1 : 'auto',
-                  backgroundColor: cellIndex === 0 ? '#fff' : 'inherit',
+                  borderLeft: cellIndex === 0 ? '#edf2f7' : 'inherit',
                   width: cell.column.getSize(),
                   minWidth: headers[cellIndex].column.columnDef.meta?.width || '150px',
                   maxWidth: '400px',
