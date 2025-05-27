@@ -45,7 +45,7 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
           </div>
 
           {result.answer && (
-            <AIResponse isTypingComplete={isTypingComplete} result={result} />
+            <AIResponse isTypingComplete={isTypingComplete} result={result} handleSearchSubmit={handleSearchSubmit} />
           )}
         </div>
       </div>
