@@ -14,7 +14,7 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
   return useMemo(
     () => (
       <div className='flex flex-col w-full pb-12 px-2'>
-        <UserMessage utterance={result.utterance} />
+        {result.answer !== 'next_page' &&  <UserMessage utterance={result.utterance} />}
         <div className='mt-6'>
           <div className='flex w-full items-center justify-between'>
             <div className='flex items-end gap-2'>
@@ -36,7 +36,17 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
                     />
                   ) : (
                     <div className='text-gray-500'>
-                      답변을 작성하는 중입니다...
+                      {
+                        result.answer === 'next_page' ? (
+                          <div className='text-gray-500'>
+                            다음 페이지 내용을 작성하는 중입니다...
+                          </div>
+                        ) : (
+                          <div className='text-gray-500'>
+                            답변을 작성하는 중입니다...
+                          </div>
+                        )
+                      }
                     </div>
                   )}
                 </div>
