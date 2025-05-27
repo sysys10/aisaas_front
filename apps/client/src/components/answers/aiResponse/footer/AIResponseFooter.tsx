@@ -4,7 +4,6 @@ import { ActionButtons } from './ActionButtons'
 import { InfoPopover } from './InfoPopover'
 import { SqlDebugInfo } from './SqlDebugInfo'
 import { CsvExporter } from './CsvExporter'
-import { SearchSubmitType } from '@types'
 interface AIResponseFooterProps {
   utterance?: string
   sqlQuery?: string
@@ -12,8 +11,6 @@ interface AIResponseFooterProps {
   chainId?: string
   dateInfo?: string[]
   table_data?: Record<string, any>[]
-  has_next?: boolean
-  handleSearchSubmit: SearchSubmitType
 }
 
 function AIResponseFooter({
@@ -21,10 +18,8 @@ function AIResponseFooter({
   sqlQuery,
   sessionId,
   chainId,
-  handleSearchSubmit, 
   dateInfo,
   table_data,
-  has_next
 }: AIResponseFooterProps) {
   const [isReportModalOpen, setIsReportModalOpen] = useState(false)
   const [likeActive, setLikeActive] = useState(false)
@@ -68,9 +63,7 @@ function AIResponseFooter({
         utterance={utterance}
       />
       <div className='flex flex-col justify-between items-end'>
-        {has_next && (
-          <button className='bg-blue-500 text-white px-3 py-1 rounded-md' onClick={()=>handleSearchSubmit({utterance: 'next_page', session_id: sessionId})}>계속하기</button>
-        )}
+        
         <div className='flex justify-between px-1'>
           <InfoPopover dateInfo={dateInfo} />
           <ActionButtons
