@@ -31,11 +31,11 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
                 <div className='flex text-base items-center pl-2'>
                   {result.answer ? (
                     <AnimatedText
-                      text={result.answer}
+                      text={result.answer === 'next_page' ? '다음 페이지' : result.answer}
                       setIsTypingComplete={setIsTypingComplete}
                     />
                   ) : (
-                    <div className='text-gray-500'>
+                    <div className='text-gray-500 pt-1'>
                       {
                         result.answer === 'next_page' ? (
                           <div className='text-gray-500'>
