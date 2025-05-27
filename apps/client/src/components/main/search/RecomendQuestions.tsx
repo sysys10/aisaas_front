@@ -19,9 +19,9 @@ export function RecommendQuestions({
         {recommend.map((utterance, index) => (
           <Chip
             key={index}
-            size='sm'
+            size='xs'
             variant='outlined'
-            className='flex-shrink-0 text-background-disabled bg-background-primary cursor-pointer shadow-sm hover:bg-primary transition-colors duration-100 hover:text-background-primary text-sm text-[#767676] px-3 py-1'
+            className='flex-shrink-0 text-background-disabled bg-background-primary cursor-pointer shadow-sm hover:bg-primary transition-colors duration-100 hover:text-background-primary text-sm text-[#767676]'
             onClick={() => handleSearchSubmit({ utterance })}
           >
             {utterance}
