@@ -27,9 +27,9 @@ export const TableBody =
                   width: cell.column.getSize(),
                   minWidth: headers[cellIndex].column.columnDef.meta?.width || '150px',
                   maxWidth: '400px',
-                  wordBreak: 'break-all',
-                  whiteSpace: 'normal',
-                  overflow: 'hidden',
+                  // wordBreak: 'break-all',
+                  whiteSpace: 'nowrap',
+                  // overflow: 'hidden',
                 }}
                 className={`px-4 py-2 uniform-numbers border-b border-gray-200 ${cellIndex === 0 && 'hover:!bg-gray-50'}`}
               >
