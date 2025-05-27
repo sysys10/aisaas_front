@@ -14,18 +14,20 @@ interface AIResponseFooterProps {
   sessionId: string
   chainId: string
   dateInfo: string[]
+  has_next: boolean
 }
 
 function AIResponseFooter({
   utterance,
   sessionId,
   chainId,
-  dateInfo
+  dateInfo,
+  has_next
 }: AIResponseFooterProps) {
   const device = useDevice((s) => s.device)
+ 
   const [likeActive, setLikeActive] = useState(false)
   const [dislikeActive, setDislikeActive] = useState(false)
-
   const handleLikeClick = () => {
     if (dislikeActive) {
       setDislikeActive(false)
@@ -82,6 +84,9 @@ function AIResponseFooter({
             )}
           </div>
           <div className='flex items-center gap-x-2'>
+            {has_next && (
+              <div className='px-3 text-base text-gray-500'>계속하기</div>
+            )}
             <CustomIcons
               name='like'
               className={`w-6 h-6 ${likeActive ? 'text-blue-500 fill-blue-500' : ''}`}

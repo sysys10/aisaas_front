@@ -1,14 +1,16 @@
-import { AICFOResultType } from '@types'
+import { AICFOResultType, SearchSubmitType } from '@types'
 
 import { Charts } from '../charts'
 import { AIResponseFooter } from './footer/AIResponseFooter'
 
 function AIResponse({
   isTypingComplete,
-  result
+  result,
+  handleSearchSubmit
 }: {
   isTypingComplete: boolean
   result: AICFOResultType
+  handleSearchSubmit: SearchSubmitType
 }) {
   const {
     table_data = [],
@@ -17,7 +19,8 @@ function AIResponse({
     session_id = '',
     chain_id = '',
     is_api = false,
-    date_info = []
+    date_info = [],
+    has_next
   } = result
 
   return (
@@ -39,6 +42,8 @@ function AIResponse({
             utterance={utterance}
             chainId={chain_id}
             sessionId={session_id}
+            has_next={has_next}
+            handleSearchSubmit={handleSearchSubmit}
           />
         </>
       )}

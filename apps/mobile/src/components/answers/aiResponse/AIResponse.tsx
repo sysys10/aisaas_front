@@ -1,19 +1,16 @@
 import { Charts } from '../charts'
 import { AIResponseFooter } from './AIResponseFooter'
 
-function AIResponse({
-  isTypingComplete,
-  result
-}: {
-  isTypingComplete: boolean
-  result: any
-}) {
+function AIResponse(
+  { isTypingComplete, result }: { isTypingComplete: boolean; result: any }
+) {
   const {
     table_data = [],
     utterance,
     session_id = '',
     chain_id = '',
-    is_api = false,
+    is_api,
+    has_next,
     date_info
   } = result
 
@@ -28,6 +25,7 @@ function AIResponse({
           </article>
 
           <AIResponseFooter
+            has_next={has_next}
             dateInfo={date_info}
             utterance={utterance}
             chainId={chain_id}

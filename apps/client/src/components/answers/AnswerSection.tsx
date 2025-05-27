@@ -9,7 +9,7 @@ import { ChatBox } from './ChatBox'
 const TOPBAR_HEIGHT = 0
 
 export function AnswerSection({ ...props }: AnswerSectionProps) {
-  const { results, searchIsLoading, isFirstSearch } = props
+  const { results, searchIsLoading, isFirstSearch, handleSearchSubmit } = props
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
 
   const answerSectionRef = useRef<HTMLDivElement>(null)
@@ -141,6 +141,7 @@ export function AnswerSection({ ...props }: AnswerSectionProps) {
                 <ChatBox
                   searchIsLoading={searchIsLoading}
                   result={result}
+                  handleSearchSubmit={handleSearchSubmit}
                   isLast={idx === results?.length - 1}
                 />
               </div>

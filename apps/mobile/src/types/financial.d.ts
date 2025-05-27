@@ -8,6 +8,7 @@ type AICFOResultType = {
   session_id?: string
   chain_id?: string
   is_api: boolean
+  has_next: boolean
 }
 
 export type { pendingAnswer, AICFOResultType }

@@ -65,6 +65,7 @@ interface AnswerSectionProps
   extends Omit<BaseSearchProps, 'handleSearchSubmit'> {
   results: AICFOResultType[]
   searchIsLoading: boolean
+  handleSearchSubmit: SearchSubmitType
 }
 
 interface AIResponseProps extends AICFOResultType {
@@ -89,6 +90,7 @@ interface ChatBoxProps {
   isLast: boolean
   searchIsLoading: boolean
   result: AICFOResultType
+  handleSearchSubmit: SearchSubmitType
 }
 
 interface MainBannerProps extends BaseSearchProps {

@@ -39,7 +39,8 @@ export function useSearchQuery({
           chain_id: '',
           is_api: false,
           is_muryo: false,
-          date_info: []
+          date_info: [],
+          has_next: false
         }
       ])
 
@@ -64,6 +65,7 @@ export function useSearchQuery({
             ? data.body.session_id
             : (request.session_id ?? ''),
           chain_id: data.success ? data.body.chain_id : '',
+          has_next: data.success ? data.body.has_next : false,
           is_api: data.success ? data.body.is_api : false,
           is_muryo: data.success ? data.body.is_muryo : false,
           date_info: data.success ? data.body.date_info : []
@@ -88,6 +90,7 @@ export function useSearchQuery({
             answer: '에러가 발생했습니다.' + data.message,
             table_data: [],
             sql_query: '',
+            has_next: false,
             session_id: request.session_id ?? '',
             chain_id: '',
             is_api: false,

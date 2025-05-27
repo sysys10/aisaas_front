@@ -8,7 +8,7 @@ import { ChatBoxProps } from '@types'
 import { UserMessage } from './UserMessage'
 import { AIResponse } from './aiResponse/AIResponse'
 
-export function ChatBox({ searchIsLoading, result, isLast }: ChatBoxProps) {
+export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }: ChatBoxProps) {
   const [isTypingComplete, setIsTypingComplete] = useState(false)
 
   return useMemo(

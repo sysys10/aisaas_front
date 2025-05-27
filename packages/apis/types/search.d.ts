@@ -9,6 +9,7 @@ interface SearchResult {
   analyzed_question?: string
   recommend?: string[]
   is_api: boolean
+  has_next: boolean
   is_muryo: boolean
   date_info?: string[]
 }
@@ -53,6 +54,7 @@ type AICFOResultType = {
   session_id?: string
   chain_id?: string
   is_api: boolean
+  has_next: boolean
   is_muryo: boolean
   date_info?: string[]
 }

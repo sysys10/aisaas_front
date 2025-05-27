@@ -26,6 +26,7 @@ export function AnswerSection({ ...props }: AnswerSectionProps) {
       behavior: 'smooth'
     })
   }, [results.length])
+  
   return useMemo(
     () => (
       <section
