@@ -63,7 +63,6 @@ function AIResponseFooter({
         utterance={utterance}
       />
       <div className='flex flex-col justify-between'>
-        
         <div className='flex justify-between px-1'>
           <InfoPopover dateInfo={dateInfo} />
           <ActionButtons

@@ -14,7 +14,7 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
   return useMemo(
     () => (
       <div className='flex flex-col w-full pb-12 px-2'>
-        {result.answer !== 'next_page' &&  <UserMessage utterance={result.utterance} />}
+        {result.utterance !== 'next_page' &&  <UserMessage utterance={result.utterance} />}
         <div className='mt-6'>
           <div className='flex w-full items-center justify-between'>
             <div className='flex items-end gap-2'>
