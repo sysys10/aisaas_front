@@ -28,14 +28,14 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
                 >
                   <img src={logo} alt='logo' className='w-full h-full' />
                 </div>
-                <div className='flex text-base items-center pl-2'>
+                <div className='flex text-base items-center pl-2 pt-1'>
                   {result.answer ? (
                     <AnimatedText
                       text={result.answer === 'next_page' ? '다음 페이지' : result.answer}
                       setIsTypingComplete={setIsTypingComplete}
                     />
                   ) : (
-                    <div className='text-gray-500 pt-1'>
+                    <div className='text-gray-500'>
                       {
                         result.answer === 'next_page' ? (
                           <div className='text-gray-500'>
