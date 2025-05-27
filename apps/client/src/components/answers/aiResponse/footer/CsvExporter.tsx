@@ -25,7 +25,7 @@ export class CsvExporter {
   }
   
   public exportCsv(): void {
-    if (this.table_data && Array.isArray(this.table_data) && this.table_data.length > 0) {
+    if (this.table_data && Array.isArray(this.table_data) && this.table_data?.length > 0) {
       this.exportFromTableData();
     } else {
       this.exportFromHtmlTables();
@@ -33,7 +33,7 @@ export class CsvExporter {
   }
   
   private exportFromTableData(): void {
-    if (!this.table_data || !this.table_data.length) return;
+    if (!this.table_data || !this.table_data?.length) return;
     
     // 모든 데이터 항목 모으기
     const allData: Record<string, any>[] = [];
@@ -181,7 +181,7 @@ export class CsvExporter {
       });
     });
 
-    if (allRows.length > 0) {
+    if (allRows?.length > 0) {
       // 모든 가능한 헤더 수집 (중복 제거)
       const allHeaders = [
         ...new Set(allRows.flatMap((row) => Object.keys(row)))

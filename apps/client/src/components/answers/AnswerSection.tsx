@@ -18,8 +18,8 @@ export function AnswerSection({ ...props }: AnswerSectionProps) {
 
   // 결과 길이가 변경될 때만 questionRefs 업데이트
   useEffect(() => {
-    questionRefs.current = questionRefs.current.slice(0, results.length)
-  }, [results.length])
+    questionRefs.current = questionRefs.current.slice(0, results?.length)
+  }, [results?.length])
 
   // 새 결과가 추가될 때 스크롤 자동 이동
   useEffect(() => {
@@ -30,7 +30,7 @@ export function AnswerSection({ ...props }: AnswerSectionProps) {
       top: currentScrollHeight,
       behavior: 'smooth'
     })
-  }, [results.length])
+  }, [results?.length])
 
   // 스크롤 위치에 따른 현재 질문 인덱스 추적
   useEffect(() => {
@@ -71,7 +71,7 @@ export function AnswerSection({ ...props }: AnswerSectionProps) {
     return () => {
       answerSection.removeEventListener('scroll', handleScroll)
     }
-  }, [results.length])
+  }, [results?.length])
 
   const scrollToTop = useCallback(() => {
     if (!answerSectionRef.current) return
@@ -103,12 +103,12 @@ export function AnswerSection({ ...props }: AnswerSectionProps) {
   }, [])
 
   const scrollToLatestQuestion = useCallback(() => {
-    if (currentQuestionIndex === results.length - 1) {
+    if (currentQuestionIndex === results?.length - 1) {
       scrollToBottom()
-    } else if (currentQuestionIndex < results.length - 1) {
+    } else if (currentQuestionIndex < results?.length - 1) {
       scrollToQuestion(currentQuestionIndex + 1)
     }
-  }, [currentQuestionIndex, results.length, scrollToBottom, scrollToQuestion])
+  }, [currentQuestionIndex, results?.length, scrollToBottom, scrollToQuestion])
 
   const scrollToPreviousQuestion = useCallback(() => {
     if (currentQuestionIndex === 0) {
@@ -133,7 +133,7 @@ export function AnswerSection({ ...props }: AnswerSectionProps) {
                 key={`question-${idx}`}
                 ref={(el) => (questionRefs.current[idx] = el)}
                 className={`w-full ${
-                  idx === results.length - 1
+                  idx === results?.length - 1
                     ? 'h-[calc(100vh-var(--topbar-height)-8rem)]'
                     : ''
                 }`}
@@ -141,7 +141,7 @@ export function AnswerSection({ ...props }: AnswerSectionProps) {
                 <ChatBox
                   searchIsLoading={searchIsLoading}
                   result={result}
-                  isLast={idx === results.length - 1}
+                  isLast={idx === results?.length - 1}
                 />
               </div>
             ))}

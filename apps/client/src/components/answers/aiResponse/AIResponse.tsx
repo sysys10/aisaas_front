@@ -1,4 +1,4 @@
-import { AICFOResultType, TableData } from '@types'
+import { AICFOResultType } from '@types'
 
 import { Charts } from '../charts'
 import { AIResponseFooter } from './footer/AIResponseFooter'

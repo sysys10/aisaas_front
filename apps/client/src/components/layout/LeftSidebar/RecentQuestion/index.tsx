@@ -30,7 +30,7 @@ export function RecentQuestionList({
         style={{ scrollbarWidth: 'none', flex: '1 1 0' }}
         className='relative px-1 overflow-y-auto w-full'
       >
-        {recentQuestions.length > 0 ? (
+        {recentQuestions?.length > 0 ? (
           <>
             {recentQuestions.map((item, index) => (
               <div key={item.utteranceDate + index}>

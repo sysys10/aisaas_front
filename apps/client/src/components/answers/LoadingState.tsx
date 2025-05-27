@@ -19,12 +19,12 @@ function LoadingState({
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentMessageIndex((prevIndex) =>
-        prevIndex === messages.length - 1 ? 0 : prevIndex + 1
+        prevIndex === messages?.length - 1 ? 0 : prevIndex + 1
       )
     }, 2000) // 2초마다 메시지 변경
 
     return () => clearInterval(interval)
-  }, [messages.length])
+  }, [messages?.length])
   return (
     <div className='flex flex-col items-center justify-center gap-8 mt-10 rounded-xl p-8'>
       <div className='flex items-center gap-8'>

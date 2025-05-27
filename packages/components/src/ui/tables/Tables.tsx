@@ -89,7 +89,7 @@ export function Table<T extends object>({
         </div>
       </div>
     ),
-    [hasNextPage, lastRowRef, sorting, table.getHeaderGroups, table.getRowModel]
+    [hasNextPage, lastRowRef, sorting, table.getHeaderGroups, table.getRowModel, data]
   )
 }
 
