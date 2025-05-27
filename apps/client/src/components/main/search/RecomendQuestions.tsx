@@ -21,7 +21,7 @@ export function RecommendQuestions({
             key={index}
             size='sm'
             variant='outlined'
-            className='flex-shrink-0 text-background-disabled bg-background-primary cursor-pointer shadow-sm hover:bg-primary transition-colors duration-100 hover:text-background-primary text-sm text-[#767676] px-3 py-2'
+            className='flex-shrink-0 text-background-disabled bg-background-primary cursor-pointer shadow-sm hover:bg-primary transition-colors duration-100 hover:text-background-primary text-sm text-[#767676] px-3 py-1'
             onClick={() => handleSearchSubmit({ utterance })}
           >
             {utterance}
