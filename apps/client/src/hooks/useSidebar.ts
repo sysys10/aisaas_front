@@ -18,8 +18,8 @@ const useSidebar = ({
 
   const toggleSidebar = (name: SidebarContent) => {
     if (name === 'setting') {
-      if (sidebarContent === name) {
-        setSidebarContent('brf')
+      if (sidebarContent === 'setting') {
+        setSidebarContent('recentQuestion')
         setIsSidebarOpen(false)
         handleCloseAdmin()
       } else {
@@ -33,11 +33,9 @@ const useSidebar = ({
       return
     }
     if (name === sidebarContent) {
-      handleCloseAdmin()
       setIsSidebarOpen(!isSidebarOpen)
       return
     }
-    handleCloseAdmin()
     setSidebarContent(name as any)
     setIsSidebarOpen(true)
   }
