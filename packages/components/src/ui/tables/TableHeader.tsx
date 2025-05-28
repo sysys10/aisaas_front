@@ -19,7 +19,7 @@ export const TableHeaderCell =
         onClick={header.column.getToggleSortingHandler()}
         style={{
           width: header.getSize(),
-          textAlign: alignment,
+          textAlign: 'center',
           // position: isFirstColumn ? 'sticky' : 'static',
           // left: isFirstColumn ? 0 : 'auto',
           zIndex: isFirstColumn ? 2 : 1,
