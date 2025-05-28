@@ -14,7 +14,22 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
   return useMemo(
     () => (
       <div className='flex flex-col w-full pb-12 px-2'>
-        {result.utterance !== 'next_page' &&  <UserMessage utterance={result.utterance} />}
+        <div className='fixed left-4 bottom-4 w-16 h-16'>
+          {searchIsLoading ? (
+            <img 
+              src='/cat_1.png' 
+              alt='Loading cat' 
+              className='w-full h-full object-contain'
+            />
+          ) : (
+            <img 
+              src='/cat_4.png' 
+              alt='Idle cat' 
+              className='w-full h-full object-contain'
+            />
+          )}
+        </div>
+        {result.utterance !== 'next_page' && <UserMessage utterance={result.utterance} />}
         <div className='mt-6'>
           <div className='flex w-full items-center justify-between'>
             <div className='flex items-end gap-2'>
@@ -53,6 +68,7 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
               </div>
             </div>
           </div>
+          
 
           {result.answer && (
             <AIResponse isTypingComplete={isTypingComplete} result={result} handleSearchSubmit={handleSearchSubmit} />
