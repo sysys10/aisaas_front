@@ -155,7 +155,7 @@ export default function LoginPage() {
             )}
             {error && (
               <div className='items-center text-sm px-2 text-red-500'>
-                {error.message}
+                {typeof error === 'string' ? error : error?.message || 'An error occurred'}
               </div>
             )}
           </div>
