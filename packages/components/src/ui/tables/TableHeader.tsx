@@ -1,5 +1,4 @@
 import { flexRender } from '@tanstack/react-table'
-import { memo } from 'react'
 
 import { cn } from '../../lib/utils'
 import { TableHeaderCellProps } from './types'
@@ -7,11 +6,10 @@ import { TableHeaderCellProps } from './types'
 export const TableHeaderCell = 
   ({ header, isFirstColumn = false }: TableHeaderCellProps) => {
     const alignment = header.column.columnDef.meta?.align || 'left'
-    const customWidth = header.column.columnDef.meta?.width || 'auto';
+    // const customWidth = header.column.columnDef.meta?.width || 'auto';
     
     const isSorted = header.column.getIsSorted()
 
-    console.log('header size', header.getSize())
     return (
       <th
         className={cn(
@@ -22,8 +20,8 @@ export const TableHeaderCell =
         style={{
           width: header.getSize(),
           textAlign: alignment,
-          position: isFirstColumn ? 'sticky' : 'static',
-          left: isFirstColumn ? 0 : 'auto',
+          // position: isFirstColumn ? 'sticky' : 'static',
+          // left: isFirstColumn ? 0 : 'auto',
           zIndex: isFirstColumn ? 2 : 1,
           backgroundColor: '#f5f5f5',
           maxWidth: '400px'
