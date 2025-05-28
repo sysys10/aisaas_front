@@ -16,7 +16,7 @@ const useLoginMutation = () => {
     },
     onSuccess: (data) => {
       if (!data.success) {
-        throw new Error({ message: data.message, status:400} as any)
+        throw new Error({ message: data.message, status:400} as unknown as string)
       }
       setHeader(data.body.jwtToken)
     }
