@@ -12,11 +12,11 @@ const useLoginMutation = () => {
   return createMutation<LoginResponse, LoginFormValues>({
     mutationFn: postLogin,
     onError: (error: any) => {
-      throw new Error(error.response.data.body)
+      throw new Error(error.response.data)
     },
     onSuccess: (data) => {
       if (!data.success) {
-        throw new Error(data.body as unknown as string)
+        throw new Error(data as unknown as string)
       }
       setHeader(data.body.jwtToken)
     }
