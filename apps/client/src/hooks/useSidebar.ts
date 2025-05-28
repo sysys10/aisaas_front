@@ -21,6 +21,7 @@ const useSidebar = ({
     // 최근질의 누르고
         
     handleCloseAdmin()
+    setIsSidebarOpen(true)
     setSidebarContent('recentQuestion')
 
         return 
