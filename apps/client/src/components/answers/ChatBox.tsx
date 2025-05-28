@@ -1,4 +1,6 @@
 import logo from '@assets/icons/AICFO_CUBE_LOGO.png'
+import loadingCat from '@assets/cat_1.png'
+import idleCat from '@assets/cat_4.png'
 import { useMemo, useState } from 'react'
 
 import AnimatedText from '@components/ui/AnimatedText'
@@ -17,13 +19,13 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
         <div className='fixed left-20 bottom-20 w-16 h-16'>
           {searchIsLoading ? (
             <img 
-              src='/cat_1.png' 
+              src={loadingCat} 
               alt='Loading cat' 
               className='w-full h-full object-contain'
             />
           ) : (
             <img 
-              src='/cat_4.png' 
+              src={idleCat}
               alt='Idle cat' 
               className='w-full h-full object-contain'
             />
