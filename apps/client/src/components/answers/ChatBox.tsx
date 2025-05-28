@@ -14,7 +14,7 @@ export function ChatBox({ searchIsLoading, result, isLast, handleSearchSubmit }:
   return useMemo(
     () => (
       <div className='flex flex-col w-full pb-12 px-2'>
-        <div className='fixed left-4 bottom-4 w-16 h-16'>
+        <div className='fixed left-20 bottom-20 w-16 h-16'>
           {searchIsLoading ? (
             <img 
               src='/cat_1.png' 
